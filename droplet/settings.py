@@ -95,7 +95,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.messages.context_processors.messages',
 )
 
-ROOT_URLCONF = 'droplet.web.urls'
+ROOT_URLCONF = 'droplet.rest.urls'
 
 WSGI_APPLICATION = 'droplet.web.wsgi.application'
 
@@ -111,8 +111,13 @@ INSTALLED_APPS = [
     'droplet',
     'droplet.web',
     'droplet.core',
+    'rest_framework',
 ] + [app.module_name for app in pkg_resources.iter_entry_points('droplet.app')]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
+#    'PAGINATE_BY': 100
+}
 
 LOGGING = {
     'version': 1,

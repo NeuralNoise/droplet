@@ -288,6 +288,10 @@ class Module(object):
         """
         return self.__class__.__name__
 
+    @property
+    def url(self):
+        return "/" + self.verbose_name
+        
     # Status info
 
     @property
