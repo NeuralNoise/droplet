@@ -11,7 +11,7 @@
             <tbody>
                 <tr ng-repeat="m in modules | orderBy:'name'">
                     <td class="icon-{{ m.name | lowercase }}"><span>{{ m.name }}</span></td>
-                    <td><center><input type="checkbox" checked="{{ m.enabled }}"></center></td>
+                    <td><center><input type="checkbox" ng-checked="m.enabled"></center></td>
                 </tr>
             </tbody>
         </table>

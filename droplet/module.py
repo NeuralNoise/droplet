@@ -291,7 +291,7 @@ class Module(object):
     @property
     def url(self):
         return "/" + self.verbose_name
-        
+
     # Status info
 
     @property
