@@ -1,7 +1,7 @@
 <a class="logo" ><img alt="zentyal logo" src="img/zentyal-logo.png"></a>
 <span class="edition">Technology Preview</span>
 <span class="version">5.0</span>
-<div id="header-buttons">
-    <!-- <a href="#" class="logout icon">Logout</a> -->
-    <a href="#" class="save-changes" ng-show="0">Save changes</a>
+<div id="header-buttons" ng-controller="headerController">
+    <a href="#" class="logout icon" ng-show="0">Logout</a>
+    <a href="#" class="save-changes" ng-show="changed">Save Changes</a>
 </div>

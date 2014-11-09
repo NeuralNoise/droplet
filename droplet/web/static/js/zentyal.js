@@ -12,6 +12,12 @@ zentyalApp.config(function($routeProvider) {
         });
 });
 
+function headerController($scope, $http) {
+    $http.get("/status").success(function (response) {
+        $scope.changed = response.changed;
+    });
+}
+
 function modulesController($scope, $http) {
     $http.get("/catalog/modules").success(function (response) {
         $scope.modules = response;
