@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="zentyalApp">
 <head>
     <title>Zentyal Server - Technology Preview</title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
@@ -7,16 +7,14 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.5/less.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
 </head>
-
-<body ng-controller="domainSettingsController">
+<body>
     <header id="main-header" ng-include="'header.html'"></header>
     <nav id="main-nav" ng-include="'menu.html'"></nav>
     <div id="content">
-        <div id="DomainSettings" class="block" ng-include="'samba-settings-form.html'"></div>
+        <div ng-view></div>
     </div>
-
-    <script src="js/samba/domainSettings.js"></script>
+    <script src="js/zentyal.js"></script>
 </body>
 </html>

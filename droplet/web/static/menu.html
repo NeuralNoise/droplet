@@ -1,18 +1,18 @@
 <ul>
-    <li><a title="Dashboard" class="icon-dashboard">Dashboard</a></li>
+    <li><a href="#" title="Dashboard" class="icon-dashboard">Dashboard</a></li>
 </ul>
 <ul>
-    <li><a title="Module Status" class="icon-modules">Modules</a></li>
+    <li><a href="#modules" title="Modules" class="icon-modules">Modules</a></li>
     <li ng-init="open = 0" ng-click="open = !open"><span title="Network" class="icon-network has-submenu">Network</span>
         <ul ng-show="open" class="submenu">
             <li ng-click="$event.stopPropagation()"><a href="#">Interfaces</a></li>
         </ul>
     </li>
 </ul>
-<ul ng-controller="DomainMenu">
+<ul ng-controller="domainMenuController">
     <li ng-repeat="m in menus" ng-click="m.open = !m.open" is-open="m.open"><span class="icon-domain has-submenu">{{ m.label }}</span>
         <ul ng-show="m.open" class="submenu">
-            <li ng-repeat="i in m.items" ng-click="$event.stopPropagation()"><a title="Settings" href="#" >{{ i.label }}</a></li>
+            <li ng-repeat="i in m.items" ng-click="$event.stopPropagation()"><a href="{{ i.url }}" title="Settings" href="#" >{{ i.label }}</a></li>
         </ul>
     </li>
 </ul>

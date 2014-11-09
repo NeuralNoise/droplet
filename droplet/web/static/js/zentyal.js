@@ -1,3 +1,20 @@
+var zentyalApp = angular.module('zentyalApp', ['ngRoute']);
+
+zentyalApp.config(function($routeProvider) {
+    $routeProvider
+        .when('/modules', {
+            templateUrl : 'modules.html',
+            controller  : 'modulesController'
+        })
+        .when('/domain-settings', {
+            templateUrl : 'domain-settings.html',
+            controller  : 'domainSettingsController'
+        });
+});
+
+function modulesController($scope, $http) {
+}
+
 function domainSettingsController($scope, $http) {
     $scope.formData = {};
 
@@ -24,13 +41,13 @@ function domainSettingsController($scope, $http) {
     };
 }
 
-function DomainMenu($scope, $http) {
+function domainMenuController($scope, $http) {
     $scope.menus = [
         {
             label: 'Domain',
             open: false,
             items: [
-                { label: 'Settings' },
+                { label: 'Settings', url: '#domain-settings' },
             ]
         }
     ];
