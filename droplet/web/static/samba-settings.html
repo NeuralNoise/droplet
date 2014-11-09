@@ -11,35 +11,8 @@
 </head>
 
 <body ng-controller="domainSettingsController">
-    <header id="main-header">
-        <a class="logo" ><img alt="zentyal logo" src="img/zentyal-logo.png"></a>
-        <span class="edition">Technology Preview</span>
-        <span class="version">5.0</span>
-        <div id="header-buttons">
-       <!-- <a href="#" class="logout icon">Logout</a> -->
-            <a href="#" class="save-changes">Save changes</a>
-        </div>
-    </header>
-    <nav id="main-nav">
-        <ul>
-            <li><a title="Dashboard" class="icon-dashboard">Dashboard</a></li>
-        </ul>
-        <ul>
-            <li><a title="Module Status" class="icon-modules">Modules</a></li>
-            <li><span title="Network" class="icon-network has-submenu">Network</span>
-                <ul class="submenu">
-                    <li><a href="#">Interfaces</a></li>
-                </ul>
-            </li>
-        </ul>
-        <ul>
-            <li><span class="icon-domain has-submenu">Domain</span>
-                <ul class="submenu">
-                    <li><a title="Settings" href="#" >Settings</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+    <header id="main-header" ng-include="'header.html'"></header>
+    <nav id="main-nav" ng-include="'menu.html'"></nav>
     <div id="content">
         <div id="DomainSettings" class="block" ng-include="'samba-settings-form.html'"></div>
     </div>
