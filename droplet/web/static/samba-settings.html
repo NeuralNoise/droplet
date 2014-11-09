@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html ng-app="">
 <head>
-<link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <title>Zentyal Server - Technology Preview</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <link type="text/css" rel="stylesheet/less" href="style.less">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.5/less.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 </head>
 
 <body ng-controller="domainSettingsController">
-<div class="container">
+    <header id="main-header">
+        <a class="logo" ><img alt="zentyal logo" src="img/zentyal-logo.png"></a>
+        <span class="edition">Technology Preview</span>
+        <span class="version">5.0</span>
+        <div id="header-buttons">
+       <!-- <a href="#" class="logout icon">Logout</a> -->
+            <a href="#" class="save-changes">Save changes</a>
+        </div>
+    </header>
+    <nav id="main-nav">
+        <ul>
+            <li><a title="Dashboard" class="icon-dashboard">Dashboard</a></li>
+        </ul>
+        <ul>
+            <li><a title="Module Status" class="icon-modules">Modules</a></li>
+            <li><span title="Network" class="icon-network has-submenu">Network</span>
+                <ul class="submenu">
+                    <li><a href="#">Interfaces</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul>
+            <li><span class="icon-domain has-submenu">Domain</span>
+                <ul class="submenu">
+                    <li><a title="Settings" href="#" >Settings</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="content">
+        <div id="DomainSettings" class="block" ng-include="'samba-settings-form.html'"></div>
+    </div>
 
-<div ng-include="'samba-settings-form.html'"></div>
-
-</div>
-
-<script src="js/samba/domainSettings.js"></script>
-
+    <script src="js/samba/domainSettings.js"></script>
 </body>
 </html>
