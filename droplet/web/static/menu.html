@@ -3,16 +3,16 @@
 </ul>
 <ul>
     <li><a title="Module Status" class="icon-modules">Modules</a></li>
-    <li><span title="Network" class="icon-network has-submenu">Network</span>
-        <ul class="submenu">
-            <li><a href="#">Interfaces</a></li>
+    <li ng-init="open = 0" ng-click="open = !open"><span title="Network" class="icon-network has-submenu">Network</span>
+        <ul ng-show="open" class="submenu">
+            <li ng-click="$event.stopPropagation()"><a href="#">Interfaces</a></li>
         </ul>
     </li>
 </ul>
-<ul>
-    <li><span class="icon-domain has-submenu">Domain</span>
-        <ul class="submenu">
-            <li><a title="Settings" href="#" >Settings</a></li>
+<ul ng-controller="DomainMenu">
+    <li ng-repeat="m in menus" ng-click="m.open = !m.open" is-open="m.open"><span class="icon-domain has-submenu">{{ m.label }}</span>
+        <ul ng-show="m.open" class="submenu">
+            <li ng-repeat="i in m.items" ng-click="$event.stopPropagation()"><a title="Settings" href="#" >{{ i.label }}</a></li>
         </ul>
     </li>
 </ul>

@@ -23,3 +23,15 @@ function domainSettingsController($scope, $http) {
         });
     };
 }
+
+function DomainMenu($scope, $http) {
+    $scope.menus = [
+        {
+            label: 'Domain',
+            open: false,
+            items: [
+                { label: 'Settings' },
+            ]
+        }
+    ];
+}
