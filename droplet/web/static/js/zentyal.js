@@ -13,6 +13,9 @@ zentyalApp.config(function($routeProvider) {
 });
 
 function modulesController($scope, $http) {
+    $http.get("/catalog/modules").success(function (response) {
+        $scope.modules = response;
+    });
 }
 
 function domainSettingsController($scope, $http) {
@@ -29,7 +32,6 @@ function domainSettingsController($scope, $http) {
             netbios: data.netbios,
             description: data.description
         };
-
     });
 
     $scope.processForm = function () {
