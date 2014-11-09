@@ -3,3 +3,4 @@ django-achilles
 django-forms-bootstrap
 six
 python-ldap
+djangorestframework
