@@ -1,4 +1,4 @@
-var zentyalApp = angular.module('zentyalApp', ['ngRoute']);
+var zentyalApp = angular.module('zentyalApp', ['ngRoute', 'ngAnimate']);
 
 zentyalApp.config(function($routeProvider) {
     $routeProvider
