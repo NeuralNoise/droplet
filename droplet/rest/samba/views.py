@@ -3,6 +3,7 @@ from droplet.rest.samba.serializers import DomainSettingsSerializer
 from droplet.samba.models import DomainSettings
 from rest_framework.response import Response
 
+
 class DomainSettingsViewSet(viewsets.ModelViewSet):
     """
     API endpoint that
