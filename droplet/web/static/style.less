@@ -340,68 +340,75 @@ DASHBOARD
 
 /* table */
 
+.block-table{
+}
 .table-wrapper {
-    margin-top: 10px;
     overflow: auto;
-    width: 100%;
-    padding: 2px 0;
+}
+.table-header{
+    position: relative;
+    margin:10px;
+}
+.table-search{
+    position: absolute;
+    top: 0;
+    right:0;
+    margin-bottom: 0;
+}
+.table-search input[type="text"]{
+    padding-right: 35px;
+}
+.table-search button{
+    background-image: url('img/search.gif');
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    height: 34px;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 34px;
+    text-indent: 100px;
+    overflow: hidden;
 }
 table {
     width: 100%;
-    color:#000000;
-    font-size: 11px;
+    font-size: 0.9rem;
     border-collapse: collapse;
     margin-top: 0px;
-    overflow-y: scroll;
-}
-table thead > tr {
-    background: #666;
-    color: white;
-}
-table thead > tr > th {
-    font-size: 11px;
-    border-right: @c-grey-l 2px solid;
 }
 table th {
-    padding: 8px 6px 8px 6px;
-    font-weight: bold;
+    font-size: 0.9em;
+    color: #999;
+    padding: 10px;
     vertical-align: middle;
+    border-bottom: 1px solid @c-grey-l;
+    border-right: 1px solid @c-grey-l;
+    border-top: 1px solid @c-grey-l;
+    text-align: left;
 }
 table td {
     padding: 5px;
-    border-right: 2px solid @c-grey-l;
+    border-right: 1px solid @c-grey-l;
+    border-bottom: 1px solid @c-grey-l;
+    vertical-align: middle;
+    padding: 5px 10px;
+    white-space: nowrap;
 }
 table td:last-child,
 table th:last-child{
     border-right:none;
-    white-space:nowrap;
-}
-table td a {
-    color: #000000;
-    background-color: none;
-    text-decoration: none;
-}
-table td img{
-    vertical-align: middle;
-}
-table td a:hover {
-    background-color: none;
-    text-decoration: underline;
-    color: @c-main-l;
-}
-table tbody tr {
-    background: white;
-    border-bottom: 2px solid @c-grey-l;
 }
 table tbody tr:hover{
-    background-color: whitesmoke;
-}
-table tr.even {
-    background: #fff;
+    background-color: @c-help-l;
 }
 table tr.highlight{
     background: @c-yellow;
-    border-color: white;
 }
 table tr.highlight:hover{
     background: @c-yellow-d;
@@ -414,6 +421,31 @@ table caption {
     border: 0px;
     padding: 2px;
 }
+.table-foot{
+    overflow: hidden;
+}
+.table-foot p{
+    float: left;
+    font-size: 0.8em;
+    padding: 0 20px;
+    color: @c-grey;
+}
+.table-pagination{
+    float: right;
+}
+.table-pagination a{
+    padding: 7px 15px;
+    display: block;
+    border-left: 1px solid @c-grey-l;
+    float: left;
+    text-decoration: none;
+    background-color: @c-grey-xl;
+    border-bottom: 1px solid  @c-grey-l
+}
+.table-pagination a.current{
+    background-color: white;
+}
+
 
 /****************************************************************************
 
