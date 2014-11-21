@@ -112,6 +112,15 @@ h5:first-child, .title5:first-child,
 h6:first-child, .title6:first-child{
     margin-top: 0px;
 }
+h1:last-child, .title1:last-child,
+h2:last-child, .title2:last-child,
+h3:last-child, .title3:last-child,
+h4:last-child, .title4:last-child,
+h5:last-child, .title5:last-child,
+h6:last-child, .title6:last-child,
+p:last-child{
+    margin-bottom: 0px;
+}
 a {
     color: #888;
     text-decoration: underline;
@@ -140,18 +149,13 @@ pre {
     padding: 10px;
     overflow: auto;
 }
-.orange{
-    color: #FF7900 !important;
-}
-.green{
-    color: #69BE28 !important;
-}
-.blue{
-    color: #00ADD0 !important;
-}
-.red{
-    color: #ed1c24 !important;
-}
+.slim{ font-size: 100;}
+
+.orange{ color: #FF7900 !important; }
+.green { color: #69BE28 !important; }
+.blue  { color: #00ADD0 !important; }
+.red   { color: #ed1c24 !important; }
+.grey  { color: #999999 !important; }
 
 /****************************************************************************
 
@@ -177,7 +181,7 @@ Main Layout
     position: absolute;
     right: 20px;
     left: 210px;
-    top: 60px;
+    top: 70px;
     padding-bottom: 50px;
 }
 #show-menu{
@@ -213,7 +217,7 @@ Main Layout
     padding: 15px 0 0 0;
     margin-bottom: 50px;
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 0px;
     width: 185px;
     z-index: 10;
@@ -405,7 +409,7 @@ table th:last-child{
     border-right:none;
 }
 table tbody tr:hover{
-    background-color: @c-help-l;
+    background-color: @c-grey-xl;
 }
 table tr.highlight{
     background: @c-yellow;
@@ -584,7 +588,7 @@ TABS options
 }
 #main-nav li a:hover,
 #main-nav li span:hover {
-    background-color: rgba(225, 220, 220, 1);
+    background-color: @c-grey-l;
     transition: background-color 0.3s;
     -moz-transition: background-color 0.3s;
     -webkit-transition: background-color 0.3s;
@@ -596,7 +600,7 @@ TABS options
 /* nav submenus and status */
 
 #main-nav .submenu {
-    background-color: #ddd;
+    background-color: @c-grey-xl;
 }
 #main-nav .submenu li {
     border-top: 1px dashed #ccc;
@@ -610,7 +614,7 @@ TABS options
     font-weight: normal;
 }
 #main-nav .submenu li a:hover {
-    background-color: #ccc;
+    background-color: @c-grey-l;
     color: #333;
  }
 #main-nav .has-submenu:after,
@@ -743,8 +747,17 @@ h4.icon-contact{
     overflow: hidden;
     border: 1px solid #ccc;
     margin-bottom: 20px;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
 }
-.block h3{
+
+.block > h1, .block > .title1,
+.block > h2, .block > .title2,   
+.block > h3, .block > .title3,
+.block > h4, .block > .title4,
+.block > h5, .block > .title5,
+.block > h6, .block > .title6{
     margin: 0;
     padding: 15px 20px; ;
     font-weight: normal;
@@ -756,6 +769,62 @@ h4.icon-contact{
 .block .bottom-block{
     margin: 15px -15px 0;
     padding: 15px 15px 0;
+}
+.block.noshadow{
+    box-shadow: none;
+    border: 0;
+    background-color: transparent;
+}
+
+.w25 { width: 25%; }
+.w33 { width: 33.3333%; }
+.w40 { width: 40%; }
+.w50 { width: 50%; }
+.w60 { width: 60%; }
+.w75 { width: 75%; }
+.w100{ width: 100%; }
+
+.block-row .w25 { width: 24.25%;   }
+.block-row .w33 { width: 32.666%;  }
+.block-row .w40 { width: 39%;      }
+.block-row .w50 { width: 49.5%;    }
+.block-row .w60 { width: 59%;      }
+.block-row .w75 { width: 74.75%;   }
+.block-row .w100{ width: 100%;     }
+
+.block-row .w75,
+.block-row .w60,
+.block-row .w50,
+.block-row .w40,
+.block-row .w33,
+.block-row .w25{ 
+  float: left;
+  margin:1%;
+}
+.block-row .w75:last-child,
+.block-row .w60:last-child,
+.block-row .w50:last-child,
+.block-row .w40:last-child,
+.block-row .w33:last-child,
+.block-row .w25:last-child{ 
+  margin-right: 0 !important; 
+}
+.block-row .w75:first-child,
+.block-row .w60:first-child,
+.block-row .w50:first-child,
+.block-row .w40:first-child,
+.block-row .w33:first-child,
+.block-row .w25:first-child{ 
+  margin-left: 0 !important; 
+}
+.block-row{
+  position:relative;
+}
+.block-row:after,
+.block-row:before{
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /**********************************************************************************************
@@ -961,55 +1030,6 @@ border-radius: 2px;
 .tip a {
     color: #FF7900;
     font-weight: bold;
-}
-.disabledCustomAction {
-    opacity: 0.5;
-}
-
-/*
-  Nedeed for combobox.js
-*/
-
-.custom-combobox {
-    position: relative;
-    display: inline-block;
-    width: 80%;
-    vertical-align: bottom;
-}
-.custom-combobox-toggle {
-    background-color: #DDD;
-    border-color: #999 !important;
-    border-style: solid;
-    border-width: 1px 1px 1px 0px !important;
-    bottom: 0px;
-    height: 28px;
-    position: absolute !important;
-    right: -2px;
-    top: 0px;
-}
-.custom-combobox-input {
-    margin: 0px;
-    padding: 0px;
-    height: 30px;
-    background-image: -moz-linear-gradient(center top , #F5F5F5, #FFFFFF);
-    border: 1px solid #999999 !important;
-    border-radius: 2px !important;
-    -webkit-border-radius:2px !important;
-    -moz-border-radius: 2px !important;
-    padding: 0 30px 0 5px;
-    width: 100%;
-    box-sizing: border-box;
-}
-.custom-combobox-add{
-    display: inline-block;
-    margin-left: 5px;
-}
-.ui-autocomplete{
-    background-color: #eee !important;
-    border: 1px solid #999 !important;
-    border-radius: 0px 0px 3px 3px !important;
-    -webkit-border-radius:0px 0px 3px 3px !important;
-    -moz-border-radius: 0px 0px 3px 3px !important;
 }
 
 
@@ -1385,54 +1405,6 @@ textarea{
 }
 
 
-/********************************************************************************
-
-FOLDABLE SECTIONS
-
-*********************************************************************************/
-
-.foldableSection{
-    border-top: 1px dashed #ccc;
-}
-.foldableSection:last-child{
-    border-bottom: 1px dashed #ccc;
-}
-.foldableHead {
-    color: #666666;
-    font-size: 14px;
-    padding: 10px 5px;
-    cursor: pointer;
-}
-.foldableHead:hover{
-    background-color: #eee;
-}
-.foldableHead span{
-    margin: 3px 5px;
-}
-.foldableContent {
-    padding: 10px 0px;
-    display: none;
-}
-.maxBox {
-        background-position: -15px 0px;
-}
-.maxBox:hover {
-        background-position: 0px 0px;
-}
-.minBox {
-        background-position: -15px -15px;
-}
-.minBox:hover {
-        background-position: 0px -15px;
-}
-.minBox, .minBox:hover, .maxBox, .maxBox:hover {
-        background-image:url('img/triangles.png');
-        background-repeat: no-repeat;
-        width: 15px;
-        height: 15px;
-        float: left;
-}
-
 /***********/
 
 .buttons-group{
@@ -1460,6 +1432,7 @@ FOLDABLE SECTIONS
 AngularJS animations
 
 *****************************/
+
 .fade {
     position: absolute;
     top: 0;
@@ -1470,9 +1443,9 @@ AngularJS animations
 }
 .fade.ng-enter,
 .fade.ng-leave {
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    transition: all 1s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 .fade.ng-enter {
     opacity: 0;
@@ -1485,6 +1458,21 @@ AngularJS animations
 }
 .fade.ng-leave-active {
     opacity: 0;
+}
+
+/********************************************************************************
+
+DASHBOARD
+
+*********************************************************************************/
+
+dt{
+    font-size: 0.7em;
+    color: @c-main;
+}
+dd{
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 /*****************************
@@ -1529,67 +1517,20 @@ Responsive corrections
 
 
 @media (max-width: 960px){
-    .dashboard{
-        width: 100%;
-    }
-    #dashboard2{
-        padding: 0;
-    }
-    #hmenu #changes_menu{
-        background-position: center center;
-        height: 60px;
-        padding: 0;
-        text-indent: 200px;
-        width: 60px;
-    }
-    .half-block{
-        width: 100%;
-    }
-    .form-block.half-block{
-        width: 98%;
-    }
-
-    /* INSTALLATION */
-
-    #software .package-big {
-        width: 99%;
-    }
-    .final_installation{
-        background-size: 60%;
-    }
-    .final_installation h4 {
-        font-size: 30px;
-    }
-    .final_installation h5 {
-        font-size: 18px;
-        width: auto;
-    }
-    .final_installation .btn {
-        position: static;
-    }
-    .ads {
-        background-size: 45%;
-        background-position: right bottom;
-        margin-left: 30px;
-    }
-    .ads h2 {
-        max-width: none;
-    }
-    .ads li,.ads p{
-      width: 50%
+   
+    .block-row .w75,
+    .block-row .w60,
+    .block-row .w50,
+    .block-row .w40,
+    .block-row .w33,
+    .block-row .w25{ 
+      float: none;
+      margin:0 0 20px 0;
+      width: 100%;
     }
 }
-
-
-
 @media (max-width: 740px){
 
-    #software .package,
-    #software .package-big,
-    #software .package-medium {
-        width: 99% ;
-        margin: 5px 0px;
-    }
     #header{
         position: static;
     }
@@ -1599,10 +1540,6 @@ Responsive corrections
     #content{
         left: 20px;
     }
-    #main-nav.install-steps li{
-        background-position: 10px center;
-    }
-
 }
 @media  (min-width: 740px) {
     #menu{
