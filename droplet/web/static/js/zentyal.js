@@ -2,6 +2,10 @@ var zentyalApp = angular.module('zentyalApp', ['ngRoute', 'ngAnimate']);
 
 zentyalApp.config(function($routeProvider) {
     $routeProvider
+        .when('/dashboard', {
+            templateUrl : 'dashboard.html',
+            controller  : 'dashboardController'
+        })
         .when('/modules', {
             templateUrl : 'modules.html',
             controller  : 'modulesController'
