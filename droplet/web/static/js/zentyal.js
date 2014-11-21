@@ -22,6 +22,12 @@ function headerController($scope, $http) {
     });
 }
 
+function dashboardController($scope, $http) {
+    $http.get("/dashboard").success(function (response) {
+        $scope.info = response;
+    });
+}
+
 function modulesController($scope, $http) {
     $http.get("/catalog/modules").success(function (response) {
         $scope.modules = response;
