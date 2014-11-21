@@ -1,3 +1,5 @@
+
+
 @c-main: #69BE28;
 @c-main-d: #46962D;
 @c-main-l: #9fd575;
@@ -32,6 +34,44 @@
 @c-warn-l:  hsl(45, 100%, 70%);
 @c-warn-d:  hsl(45, 100%, 40%);
 
+/*  Font load   */
+
+@font-face {
+    font-family: "Merriweather";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/MerriweatherSans-Regular.ttf") format("truetype")
+}
+@font-face {
+    font-family: "Merriweather";
+    font-style: italic;
+    font-weight: normal;
+    src: url("fonts/MerriweatherSans-italic.ttf") format("truetype")
+}
+@font-face {
+    font-family: "Merriweather";
+    font-style: normal;
+    font-weight: lighter;
+    src: url("fonts/MerriweatherSans-Light.ttf") format("truetype")
+}
+@font-face {
+    font-family: "Merriweather";
+    font-style: italic;
+    font-weight: lighter;
+    src: url("fonts/MerriweatherSans-LightItalic.ttf") format("truetype")
+}
+@font-face {
+    font-family: "Merriweather";
+    font-style: normal;
+    font-weight: bold;
+    src: url("fonts/MerriweatherSans-Bold.ttf") format("truetype")
+}
+@font-face {
+    font-family: "Merriweather";
+    font-style: italic;
+    font-weight: bold;
+    src: url("fonts/MerriweatherSans-BoldItalic.ttf") format("truetype")
+}
 
 /*  Global Reset & Standards */
 
@@ -72,7 +112,7 @@ body {
     padding:0;
     color: #333;
     font-size: 1em  ;
-    font-family: 'Merriweather Sans', verdana, sans-serif;
+    font-family: 'Merriweather', verdana, sans-serif;
     background-color: @c-grey-l;
     position: relative;
     -webkit-font-smoothing: antialiased;
@@ -799,7 +839,7 @@ h4.icon-contact{
 .block-row .w33,
 .block-row .w25{ 
   float: left;
-  margin:0 1%;
+  margin:   0 1%;
 }
 .block-row .w75:last-child,
 .block-row .w60:last-child,
